@@ -1,0 +1,156 @@
+/* ── 1. FUENTES PREMIUM ELITE ───────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap');
+
+/* ── 2. FONDO BLANCO GENERAL ────────────────────────────────────────────── */
+html, body, [data-testid="stAppViewContainer"] {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    background-color: #FFFFFF !important; 
+    color: #000000 !important; 
+}
+#MainMenu, footer, header, [data-testid="collapsedControl"] {
+    display: none !important;
+    visibility: hidden !important;
+}
+/* Ocultar barra lateral y menús nativos de Streamlit */
+[data-testid="stSidebar"] {
+    background-color: #FFFFFF !important;
+    border-right: 1px solid #E2E8F0 !important;
+}
+
+[data-testid="stBlock"] {
+    padding-top: 0.5rem !important;
+}
+
+/* ── 3. TEXTOS DEL TITULO Y SUBTITULO ───────────────────────────────────── */
+.hero-box {
+    text-align: center;
+    padding: 2rem 1rem 1rem 1rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.hero-title {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 2.8rem !important;
+    font-weight: 600 !important;
+    color: #1E3A8A !important; /* Azul Imperial para el título */
+    margin-bottom: 0.5rem !important;
+}
+.hero-subtitle {
+    font-size: 1.1rem !important;
+    color: #334155 !important;
+    max-width: 850px;
+    margin: 0 auto !important;
+    line-height: 1.6 !important;
+}
+
+.navigation-grid {
+    max-width: 1350px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+}
+
+/* ── 4. CONTROL TOTAL DE COLORES EN BOTONES (REQUISITOS SOLICITADOS) ────── */
+div.stButton > button {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    padding: 0.7rem 1rem !important;
+    font-size: 0.95rem !important;
+    transition: all 0.2s ease !important;
+    width: 100% !important;
+}
+
+[data-testid="stAppViewContainer"] div.stButton > button {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    border: none !important; 
+    outline: none !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Razón: Forzamos de forma radical que el texto de TODOS los botones, 
+   sus contenedores de texto y sub-elementos sean SIEMPRE NEGROS y en negrita */
+[data-testid="stAppViewContainer"] div.stButton > button,
+[data-testid="stAppViewContainer"] div.stButton > button *,
+[data-testid="stAppViewContainer"] div.stButton > button:hover *,
+[data-testid="stAppViewContainer"] div.stButton > button:active * {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    font-weight: 700 !important;
+}
+
+/* ===== BOTÓN ACTIVO (BLANCO) ===== */
+div.stButton > button[kind="primary"] {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    border: 1px solid #D1D5DB !important;
+    border-radius: 12px !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;
+}
+
+div.stButton > button[kind="primary"]:hover {
+    background: #F8FAFC !important;
+    color: #000000 !important;
+}
+
+/* ===== BOTÓN INACTIVO (GRIS) ===== */
+div.stButton > button[kind="secondary"] {
+    background: #E5E7EB !important;
+    color: #000000 !important;
+    border: 1px solid #D1D5DB !important;
+    border-radius: 12px !important;
+    box-shadow: none !important;
+}
+
+div.stButton > button[kind="secondary"]:hover {
+    background: #D1D5DB !important;
+    color: #000000 !important;
+}
+
+/* ── 5. SECCIONES Y METRICAS (KPIs) ─────────────────────────────────────── */
+.section-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: #1E3A8A;
+    margin: 1.5rem 0 1rem 0;
+    padding-bottom: 0.3rem;
+    border-bottom: 2px solid #3B82F6;
+    display: inline-block;
+}
+.comparison-title {
+    font-family: 'Playfair Display', serif !important;
+    color: #1E3A8A !important;
+    text-align: center;
+    font-size: 1.3rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.kpi-card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 1.1rem 1.2rem;
+    border: 1px solid #E2E8F0;
+    border-left: 4px solid #64748B;
+    box-shadow: 0 2px 4px rgba(15, 23, 42, 0.01);
+    margin-bottom: 0.8rem;
+}
+.kpi-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748B;
+    margin-bottom: 0.4rem;
+}
+.kpi-value {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #0F172A;
+}
+.kpi-total   { border-left-color: #3B82F6 !important; }
+.kpi-revenue { border-left-color: #10B981 !important; }
+.kpi-revenue .kpi-value { color: #047857 !important; }
+.kpi-cancel  { border-left-color: #EF4444 !important; }
+.kpi-cancel  .kpi-value { color: #B91C1C !important; }
+.kpi-adr     { border-left-color: #F59E0B !important; }
+.kpi-lead    { border-left-color: #6366F1 !important; }
+.kpi-nights  { border-left-color: #06B6D4 !important; }
